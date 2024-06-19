@@ -1,0 +1,214 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý giảng viên</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.png' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/styles.min.css' %}" />
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center">
+                    <a href="{% url 'trangchu' %}" class="text-nowrap logo-img">
+                        <img src="{% static 'assets/images/favicon.png' %}" alt="" />
+                        <span class="fs-6 ms-1 fw-bolder text-dark">
+                          Quản lý giảng viên
+                        </span>
+                    </a>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'trangchu' %}" aria-expanded="false">
+                                <span>
+                                  <i class="ti ti-layout-dashboard"></i>
+                                </span>
+                                <span class="hide-menu fs-5 fw-bolder">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" style="background-color: #5D87FF; border-radius: 7px;">
+                            <a class="sidebar-link" href="{% url 'khoa' %}" aria-expanded="false" style="border-radius: 7px; color: #fff;">
+                                <span>
+                                    <i class="ti ti-article"></i>
+                                </span>
+                                <span class="hide-menu fs-5 fw-bolder">Quản lý khoa</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'lophoc' %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-home"></i>
+                                </span>
+                                <span class="hide-menu fs-5 fw-bolder">Quản lý lớp học</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'monhoc' %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-cards"></i>
+                                </span>
+                                <span class="hide-menu fs-5 fw-bolder">Quản lý môn học</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'giangvien' %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user"></i>
+                                </span>
+                                <span class="hide-menu fs-5 fw-bolder">Quản lý giảng viên</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'taikhoangv' %}" aria-expanded="false">
+                              <span>
+                                <i class="ti ti-users"></i>
+                              </span>
+                              <span class="hide-menu fs-5 fw-bolder">Quản lý tài khoản <br /> giảng viên</span>
+                            </a>
+                          </li>
+                          <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'phanconggv' %}" aria-expanded="false">
+                              <span>
+                                <i class="ti ti-typography"></i>
+                              </span>
+                              <span class="hide-menu fs-5 fw-bolder">Phân công dạy học</span>
+                            </a>
+                          </li>
+                          <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'thongkebaocao' %}" aria-expanded="false">
+                              <span>
+                                <i class="ti ti-chart-bar"></i>
+                              </span>
+                              <span class="hide-menu fs-5 fw-bolder">Thống kê và báo cáo</span>
+                            </a>
+                          </li>
+                          <li class="sidebar-item">
+                            <a class="sidebar-link" href="{% url 'thongtintk' %}" aria-expanded="false">
+                              <span>
+                                <i class="ti ti-user-minus"></i>
+                              </span>
+                              <span class="hide-menu fs-5 fw-bolder">Thông tin tài khoản</span>
+                            </a>
+                          </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            <header class="app-header">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                        <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                                  aria-expanded="false">
+                                  <img src="{% static 'assets/images/' %}{{ request.session.anh }}" alt="" width="35" height="35" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                                  <div class="message-body">
+                                    <a href="{% url 'thongtintk' %}" class="d-flex align-items-center gap-2 dropdown-item">
+                                      <i class="ti ti-user"></i>
+                                      <p class="mb-0 fs-5 fw-bolder">Thông tin tài khoản</p>
+                                    </a>
+                                    <a href="{% url 'logout' %}"
+                                      class="btn btn-outline-primary mx-3 mt-2 d-block fs-5 fw-bolder">Đăng xuất</a>
+                                  </div>
+                                </div>
+                              </li>
+                        </ul>
+                    </div>
+                </nav>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="navbar-collapse justify-content px-0 row" id="navbarNav">
+                        <h2 class="col-5">Danh sách khoa</h2>
+                        <div class="col-7">
+                            <form action="{% url 'timkiemkhoa' %}" class="px-0 navbar-collapse justify-content" method="GET">
+                                <label for="tk" class="h3 mt-2" style="width: 310px;">Thông tin khoa: </label>
+                                <input type="text" class="form-control fw-bolder fs-5 border border-3 border-dark"
+                                    id="tk" style="width: 580px;" name="thongtin" placeholder="Nhập mã khoa hoặc tên khoa">
+                                <button type="submit" class="btn btn-primary ms-2 fs-5" style="width: 170px;">Tìm
+                                    kiếm</button>
+                                <a href="{% url 'khoa' %}" class="btn btn-primary ms-2 fs-5 me-2" style="width: 110px;">Tải
+                                    lại</a>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="navbar-collapse justify-content px-0 row ms-1" id="navbarNav">
+                        <a class="btn btn-success" href="{% url 'themkhoa' %}" style="width: 170px;">
+                            <i class="ti ti-plus me-1 fs-6"></i>
+                            <span class="fw-bolder fs-6">Thêm khoa</span>
+                        </a>
+                    </div>
+                </nav>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="navbar-collapse justify-content px-0" id="navbarNav">
+                        <table class="table table-bordered fs-5 fw-bolder border-dark border-3 rounded-4 text-dark">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th scope="col" style="width: 5%;">STT</th>
+                                    <th scope="col" style="width: 15%;">Mã khoa</th>
+                                    <th scope="col" style="width: 40%;">Tên khoa</th>
+                                    <th scope="col">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for khoa in all_khoa %}
+                                <tr style="text-align: center;">
+                                    <th>{{ forloop.counter }}</th>
+                                    <td>{{ khoa.ma_khoa }}</td>
+                                    <td>{{ khoa.ten_khoa }}</td>
+                                    <td>
+                                        <a class="btn btn-info" href="{% url 'suakhoa' khoa.id %}">
+                                            <i class="ti ti-pencil me-1 fs-6"></i>
+                                            <span class="fw-bolder">Sửa</span>
+                                        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        
+                                        <a class="btn btn-danger" href="javascript:void(0);" onclick="xoa('{{ khoa.ma_khoa }}')">
+                                            <i class="ti ti-trash me-1 fs-6"></i>
+                                            <span class="fw-bolder">Xóa</span>
+                                        </a>
+                                        <script>
+                                            function xoa(ma) {
+                                                if (confirm("Bạn có muốn xóa khoa có mã " + ma + " này không?")) {
+                                                    window.location = "{% url 'xoakhoa' %}?ma_khoa=" + ma;
+                                                }
+                                            }
+                                        </script>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/sidebarmenu.js' %}"></script>
+    <script src="{% static 'assets/js/app.min.js' %}"></script>
+    <script src="{% static 'assets/libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+    <script src="{% static 'assets/libs/simplebar/dist/simplebar.js' %}"></script>
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
+</body>
+
+</html>
