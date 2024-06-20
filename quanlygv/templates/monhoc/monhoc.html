@@ -107,7 +107,7 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-        <!--  Sidebar End -->
+
         <!--  Main wrapper -->
         <div class="body-wrapper">
             <!--  Header Start -->
@@ -160,6 +160,7 @@
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="navbar-collapse justify-content px-0" id="navbarNav">
+                        <!-- hiển thị danh sách các môn học trong bảng  -->
                         <table class="table table-bordered fs-5 fw-bolder border-dark border-3 rounded-4 text-dark">
                             <thead>
                                 <tr style="text-align: center;">
@@ -171,6 +172,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- vòng lặp để hiển thị từng môn học -->
                                 {% for mh in all_monhoc %}
                                 <tr style="text-align: center;">
                                     <th>{{ forloop.counter }}</th>

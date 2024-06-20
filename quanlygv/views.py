@@ -220,13 +220,18 @@ def xoa_monhoc(request):
         monhoc.delete()
         return redirect('monhoc')
 
+# định nghĩa hàm timkiem_monhoc(request) để tìm kiếm thông tin môn học
 def timkiem_monhoc(request):
+    # sử dụng phương thức GET ET để lấy giá trị của tham số thongtin từ URL. Là chuỗi tìm kiếm do người dùng nhập vào
     query = request.GET.get('thongtin')
+    # sử dụng phương thức filter() để lọc ra các bản ghi có thông tin chứa chuỗi tìm kiếm
+    # Q là một đối tượng dùng để tạo điều kiện lọc dữ liệu
     monhoc_list = Monhoc.objects.filter(Q(ma_mh__icontains=query) 
                                         | Q(ten_mh__icontains=query ) 
                                         | Q(so_tc__icontains=query ))
+    # trả về trang monhoc/monhoc.html với danh sách các môn học đã lọc
     return render(request, 'monhoc/monhoc.html', {'all_monhoc': monhoc_list})
-
+    # Biến monhoc_list chứa danh sách các môn học phù hợp với truy vấn tìm kiếm được truyền vào template dưới tên all_monhoc.
 
 # Lớp học
 def lophoc(request):

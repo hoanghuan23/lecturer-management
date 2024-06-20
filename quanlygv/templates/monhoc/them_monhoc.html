@@ -108,7 +108,8 @@
             <!-- End Sidebar scroll-->
         </aside>
         <!--  Sidebar End -->
-        <!--  Main wrapper -->
+
+        <!-- thêm môn học với các trường input để nhập thông tin mã môn, tên môn, số tín chỉ -->
         <div class="body-wrapper">
             <!--  Header Start -->
             <header class="app-header">
@@ -141,7 +142,8 @@
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="navbar-collapse justify-content px-0 row" id="navbarNav">
-                        <form action="" method="POST">
+                      <!--  gửi dữ liệu lên server bằng phương thức post -->
+                      <form action="" method="POST"> form
                             {% csrf_token %}
                             <div class="mb-3">
                                 <label for="mk" class="form-label fw-bolder fs-6">Mã môn học:</label>

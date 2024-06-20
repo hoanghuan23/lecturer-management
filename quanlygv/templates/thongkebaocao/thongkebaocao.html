@@ -139,23 +139,29 @@
           </div>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light">
+          <!-- hiển thị tiêu đề -->
           <div class="navbar-collapse justify-content px-0 row" id="navbarNav">
               <h2 class="col-6">Thống kê báo cáo</h2>
           </div>
         </nav>
+        <!-- tạo thẻ canvas cho biểu đồ -->
         <nav class="navbar navbar-expand-lg navbar-light mt-4">
           <canvas id="monhocBarChart"></canvas>
           <script>
+            // lấy dối tượng ngữ cảnh vẽ 2d từ thẻ canvas
               var ctx1 = document.getElementById('monhocBarChart').getContext('2d');
+            // Tạo mảng labels chứa mã khoa từ dữ liệu khoa_giangvien_count
               var labels = [];
               {% for item in khoa_giangvien_count %}
                   labels.push('{{ item.khoa.ma_khoa }}');
               {% endfor %}
+              // Tạo mảng data chứa số lượng giảng viên từ dữ liệu
               var data = [];
               {% for item in khoa_giangvien_count %}
                 data.push('{{ item.giangvien_count }}');
               {% endfor %}
 
+              // Khởi tạo biểu đồ cột (type: 'bar') với dữ liệu labels và data.
               var monhocBarChart = new Chart(ctx1, {
                   type: 'bar',
                   data: {
@@ -211,15 +217,18 @@
               });
           </script>
         </nav>
-        
+        <!-- Tạo thẻ canvas cho biểu đồ -->
         <nav class="navbar navbar-expand-lg navbar-light mt-4">
           <canvas id="lophocBarChart"></canvas>
           <script>
+            // Lấy đối tượng ngữ cảnh vẽ 2D từ thẻ canvas.
               var ctx2 = document.getElementById('lophocBarChart').getContext('2d');
+              // Tạo mảng labels chứa mã khoa từ dữ liệu khoa_lophoc_count.
               var labels = [];
               {% for item in khoa_lophoc_count %}
                   labels.push('{{ item.khoa.ma_khoa }}');
               {% endfor %}
+              // Tạo mảng data chứa số lượng lớp học từ dữ liệu khoa_lophoc_count.
               var data = [];
               {% for item in khoa_lophoc_count %}
                 data.push('{{ item.lophoc_count }}');
