@@ -9,6 +9,7 @@
   6. phân công dạy học
   7. thống kê và báo cáo
   8. thông tin tài khoản
+  9. quản lý môn học
   
 ![image](https://github.com/user-attachments/assets/cd0d9cb5-0a9b-4466-a375-2e48568729bf)
 ![image](https://github.com/user-attachments/assets/1745dedb-f0c5-4b4e-b213-ced3acc294e0)
