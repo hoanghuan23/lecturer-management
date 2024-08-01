@@ -11,6 +11,8 @@
 8. thông tin tài khoản
 9. quản lý môn học
 - các bạn chạy chương trình: trong phần console của IDE Visual studio code bạn chạy câu lệnh **python manage.py runserver**
+
+# một số giao diện chương trình
 ![image](https://github.com/user-attachments/assets/cd0d9cb5-0a9b-4466-a375-2e48568729bf)
 ![image](https://github.com/user-attachments/assets/1745dedb-f0c5-4b4e-b213-ced3acc294e0)
 ![image](https://github.com/user-attachments/assets/cfd1715f-a37b-4a18-aa07-60bd9debbc33)
