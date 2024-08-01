@@ -1,14 +1,14 @@
 ## Phần mềm quản lý giảng viên trong trường đại học
 - các ngôn ngữ và công cụ được sử dụng: python, django, sqlite3, front-end(HTML,CSS,JAVASCRIPT)
 - các chức năng trong chương trình:
-1 đăng nhập
-2 quản lý khoa
-3 quản lý lớp học
-4 quản lý giảng viên
-5 quản lý tài khoản giảng viên
-6 phân công dạy học
-7 thống kê và báo cáo
-8 thông tin tài khoản
+  1. đăng nhập
+  2. quản lý khoa
+  3. quản lý lớp học
+  4. quản lý giảng viên
+  5. quản lý tài khoản giảng viên
+  6. phân công dạy học
+  7. thống kê và báo cáo
+  8. thông tin tài khoản
   
 ![image](https://github.com/user-attachments/assets/cd0d9cb5-0a9b-4466-a375-2e48568729bf)
 ![image](https://github.com/user-attachments/assets/1745dedb-f0c5-4b4e-b213-ced3acc294e0)
