@@ -1,4 +1,6 @@
 ## Phần mềm quản lý giảng viên trong trường đại học
+- tài khoản: huan23
+- mật khẩu: 1
 - các ngôn ngữ và công cụ được sử dụng: python, django, sqlite3, front-end(HTML,CSS,JAVASCRIPT)
 - các chức năng trong chương trình:
 1. đăng nhập
